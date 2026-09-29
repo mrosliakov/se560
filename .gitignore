@@ -1,0 +1,8 @@
+/build/
+/cmake-build-*/
+
+CMakeUserPresets.json
+
+.idea/
+.vscode/
+.cache/
