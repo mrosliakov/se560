@@ -1,8 +1,9 @@
-add_library(fibonacci src/fibonacci.cpp)
-add_library(se560::fibonacci ALIAS fibonacci)
+add_library(fibonacci_lib STATIC)
+target_sources(fibonacci_lib PRIVATE src/fibonacci.cpp)
 
-target_include_directories(fibonacci
+target_include_directories(fibonacci_lib
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-target_compile_features(fibonacci PRIVATE cxx_std_23)
+target_compile_features(fibonacci_lib PRIVATE cxx_std_23)
+set_target_properties(fibonacci_lib PROPERTIES CXX_EXTENSIONS OFF)
